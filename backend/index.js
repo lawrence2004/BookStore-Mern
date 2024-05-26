@@ -21,15 +21,15 @@ app.use(express.json());
 
 // CORS POLICY  
 //option 1
-app.use(cors());
+// app.use(cors());
 //option 2
-// app.use(
-//   cors({
-//     origin: 'http://localhost:3001',
-//     methods: ['GEt', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type'],
-//   })
-// )
+app.use(
+  cors({
+    origin: 'https://book-store-mern-ufru.vercel.app',
+    methods: ['GEt', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+  })
+)
 
 app.get("/", (req, res) => {
   res.status(200).send("Welcome To MERN-BookStore");
